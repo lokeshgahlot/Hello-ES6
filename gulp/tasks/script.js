@@ -1,8 +1,6 @@
 module.exports = function() {
   'use strict';
 
-  // TODO: following 3 variable should come from config file
-
   var gulp = require('gulp');
   var gp = require('gulp-load-plugins')({lazy: true});
   var config = require('./config')();
