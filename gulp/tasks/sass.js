@@ -1,13 +1,13 @@
 module.exports = function() {
   'use strict';
 
-  // TODO: following variables should come from config file
-  var src = '../src/**/*.sass';
-  var dest = '../dest/css/';
-  var env = process.env.NODE_ENV;
-
   var gulp = require('gulp');
   var gp = require('gulp-load-plugins')({lazy: true});
+  var config = require('./config')();
+
+  var src = config.src + '**/*.jade';
+  var dest = config.dest;
+  var env = config.env;
 
   var sassTask = function() {
     var config = {};

@@ -1,15 +1,13 @@
 module.exports = function() {
   'use strict';
 
-  // TODO: following variables should come from config file
-  var src = '../src/**/*.jade';
-  var dest = '../dest/';
-  var env = 'dev';
-
-  var task = 'jade';
-
   var gulp = require('gulp');
   var gp = require('gulp-load-plugins')({lazy: true});
+  var config = require('./config')();
+
+  var src = config.src + '**/*.jade';
+  var dest = config.dest;
+  var env = config.env;
 
   var jadeTask = function() {
     return gulp.src(src)
@@ -19,7 +17,7 @@ module.exports = function() {
       .pipe(gulp.dest(dest));
   };
 
-  gulp.task(task, function() {
+  gulp.task('jade', function() {
     return jadeTask();
   });
 };
