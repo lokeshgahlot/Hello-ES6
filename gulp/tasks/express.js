@@ -11,7 +11,7 @@ module.exports = function() {
   var gulp = require('gulp');
   var browserSync = require('browser-sync');
   var gp = require('gulp-load-plugins')({lazy: true});
-  // var reload = browserSync.reload;
+
   var startBrowserSync = function() {
     if (browserSync.active) {
       return;
@@ -62,7 +62,7 @@ module.exports = function() {
         });
   });
 
-  gulp.task('server', ['generate', 'browser-sync'], function() {
+  gulp.task('express', ['browser-sync'], function() {
 
     gulp.watch([src + '**/*.jade'], ['jade'], function() {
       console.log('HTML file changed, rebuilding...');
