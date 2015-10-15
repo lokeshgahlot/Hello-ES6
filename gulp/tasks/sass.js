@@ -15,7 +15,7 @@ module.exports = function() {
 
     switch (env) {
       case 'dev':
-        config.sourceComments = 'map';
+        // config.sourceComments = 'map';
         break;
       case 'prod':
         config.outputStyle = 'compressed';
@@ -26,8 +26,10 @@ module.exports = function() {
 
     return gulp.src(src)
       .pipe(gp.plumber())
+      .pipe(gp.sourcemaps.init())
       .pipe(gp.sass(config))
       .pipe(gp.flatten())
+      .pipe(gp.sourcemaps.write())
       .pipe(gulp.dest(dest));
   };
 

@@ -12,7 +12,9 @@ module.exports = function() {
   var scriptTask = function() {
     return gulp.src(src)
     .pipe(gp.plumber())
+    .pipe(gp.sourcemaps.init())
     .pipe(gp.flatten())
+    .pipe(gp.sourcemaps.write())
     .pipe(gulp.dest(dest));
   };
 

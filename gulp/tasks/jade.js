@@ -12,8 +12,10 @@ module.exports = function() {
   var jadeTask = function() {
     return gulp.src(src)
       .pipe(gp.plumber())
+      .pipe(gp.sourcemaps.init())
       .pipe(gp.jade({pretty: env === 'prod' ? false : true}))
       .pipe(gp.flatten())
+      .pipe(gp.sourcemaps.write())
       .pipe(gulp.dest(dest));
   };
 
