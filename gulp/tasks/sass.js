@@ -5,8 +5,8 @@ module.exports = function() {
   var gp = require('gulp-load-plugins')({lazy: true});
   var config = require('./config')();
 
-  var src = config.src + '**/*.jade';
-  var dest = config.dest;
+  var src = config.sassSrc + '**/*.sass';
+  var dest = config.sassDest;
   var env = config.env;
 
   var sassTask = function() {
