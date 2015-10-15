@@ -8,6 +8,7 @@ module.exports = function() {
   require('./sass')();
   require('./script')();
   require('./express')();
+  require('./clean')();
 
   gulp.task('generate',['jade', 'sass', 'script'], function() {
     console.log('generate....');
