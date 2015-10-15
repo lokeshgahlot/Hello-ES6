@@ -3,9 +3,10 @@ module.exports = function() {
 
   var gulp = require('gulp');
   var gp = require('gulp-load-plugins')({lazy: true});
+
   var config = require('./config')();
 
-  var src = config.sassSrc + '**/*.sass';
+  var src = config.sassSrc;
   var dest = config.sassDest;
   var env = config.env;
 
