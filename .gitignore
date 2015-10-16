@@ -6,5 +6,5 @@ dest/
 sample-files/
 */**/npm-debug.log
 */**/bower_components/
-basic-gulp-setup.sublime-workspace
-basic-gulp-setup.sublime-project
+gulp-setup.sublime-project
+gulp-setup.sublime-workspace
