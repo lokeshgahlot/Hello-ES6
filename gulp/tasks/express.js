@@ -1,16 +1,18 @@
 module.exports = function() {
   'use strict';
-
-  // TODO: following variable should come from config file
-  var dest = '../dest/';
-  var src = '../src/';
-  var env = process.env.NODE_ENV;
-  var proxyPort = process.env.NODE_PROXY_PORT;
-  var port = process.env.NODE_PORT;
-
   var gulp = require('gulp');
   var browserSync = require('browser-sync');
   var gp = require('gulp-load-plugins')({lazy: true});
+  var config = require('./config')();
+
+  var src = config.src;
+  var dest = config.dest;
+  // var env = config.env;
+
+  console.log('config.proxyPort', config.proxyPort);
+
+  var proxyPort = process.env.NODE_PROXY_PORT;
+  var port = process.env.NODE_PORT;
 
   var startBrowserSync = function() {
     if (browserSync.active) {
@@ -20,7 +22,7 @@ module.exports = function() {
     var options = {
           proxy: 'localhost:' + proxyPort,
           port: port,
-          files: [ dest + '*.*' ],
+          files: [ dest + '**.*' ],
           ghostMode: {
             clicks: true,
             location: false,

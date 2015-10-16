@@ -4,7 +4,9 @@ module.exports = function() {
   var config = {
     src: '../src/',
     dest: '../dest/',
-    env: process.env.NODE_ENV
+    env: process.env.NODE_ENV,
+    pory: process.env.NODE_PORT,
+    portProxy: process.env.NODE_PROXY_PORT
   };
 
   // js
