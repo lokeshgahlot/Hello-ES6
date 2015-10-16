@@ -20,7 +20,7 @@ module.exports = function() {
     var options = {
           proxy: 'localhost:' + proxyPort,
           port: port,
-          files: [ dest + '**/*.*' ],
+          files: [ dest + '*.*' ],
           ghostMode: {
             clicks: true,
             location: false,
