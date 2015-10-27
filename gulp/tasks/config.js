@@ -10,11 +10,14 @@ module.exports = function() {
   };
 
   // js
-  config.jsSrc = [config.src + '**/*.js', '!' + config.src + '**/bower_components/**/src/**/*.js', '!' + config.src + '**/*.min.js'];
+  config.jsSrc = [config.src + '**/*.js', '!' + config.src + '**/bower_components/**/src/**/*.js', '!' + config.src + '**/*.min.js', '!' + config.src + '**/*.babelify.js' ];
   config.jsDest =  config.dest + 'js/';
 
-  //sass
+  // Babel
+  config.babelSrc = config.src + '**/*.babelify.js';
+  config.babelDest =  config.dest + 'js/';
 
+  //sass
   config.sassSrc = config.src +   '**/*.sass';
   config.sassDest = config.dest + 'css/';
 

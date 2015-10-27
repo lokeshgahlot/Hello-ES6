@@ -74,7 +74,7 @@ module.exports = function() {
       console.log('Css file changed, rebuilding...');
     });
 
-    gulp.watch([src + '**/*.js'], ['script'], function() {
+    gulp.watch([src + '**/*.js'], ['script', 'babel-es6'], function() {
       console.log('JS file changed, rebuilding...');
     });
 

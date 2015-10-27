@@ -5,8 +5,8 @@ module.exports = function() {
   var gp = require('gulp-load-plugins')({lazy: true});
   var config = require('./config')();
 
-  var src = config.jsSrc;
-  var dest = config.jsDest;
+  var src = config.babelSrc;
+  var dest = config.babelDest;
   var env = config.env;
 
   var scriptTask = function() {

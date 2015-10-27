@@ -7,10 +7,11 @@ module.exports = function() {
   require('./jade')();
   require('./sass')();
   require('./script')();
+  require('./babel')();
   require('./express')();
   require('./clean')();
 
-  gulp.task('generate',['jade', 'sass', 'script'], function() {
+  gulp.task('generate',['jade', 'sass', 'script', 'babel-es6'], function() {
     console.log('generate....');
   });
 
