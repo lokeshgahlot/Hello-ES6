@@ -13,10 +13,17 @@ module.exports = function() {
   config.jsSrc = [config.src + '**/*.js', '!' + config.src + '**/bower_components/**/src/**/*.js', '!' + config.src + '**/*.min.js'];
   config.jsDest =  config.dest + 'js/';
 
-  //sass
-
+  // sass
   config.sassSrc = config.src +   '**/*.sass';
   config.sassDest = config.dest + 'css/';
+
+  // jade
+  config.jadeSrc = config.src +   '**/*.jade';
+  config.jadeDest = config.dest;
+
+  config.cssWatcherSrc = [config.sassSrc];
+  config.htmlWatcherSrc = [config.jadeSrc];
+  config.jsWatcherSrc = [config.jsSrc];
 
   return config;
 };
