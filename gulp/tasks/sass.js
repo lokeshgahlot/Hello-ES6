@@ -28,6 +28,7 @@ module.exports = function() {
       .pipe(gp.plumber())
       .pipe(gp.sourcemaps.init())
       .pipe(gp.sass(config))
+      .pipe(gp.autoprefixer('last 3 version'))
       .pipe(gp.flatten())
       .pipe(gp.sourcemaps.write())
       .pipe(gulp.dest(dest));
