@@ -81,10 +81,10 @@
    name = 'Kaleem';
    console.log('t = ', t);*/
 
-  function g({type: t, name: x}) {
+  /*function g({type: t, name: x}) {
     console.log(x);
     console.log(t);
   }
-  g({name: 'Kaleem', type:'A' })
+  g({name: 'Kaleem', type:'A' })*/
 
 }
