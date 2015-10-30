@@ -5,8 +5,8 @@ module.exports = function() {
   var config = require('./config')();
   var babel = require('gulp-babel');
 
-  var src = [config.src + '**/*.js', '!' + config.src + '**/*.no-babel.js'];
-  var dest = config.dest + 'js/';
+  var src = config.babelSrc;
+  var dest = config.babelDest;
   // var env = config.env;
 
   gulp.task('babel-es6', function() {
