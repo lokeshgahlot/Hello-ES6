@@ -21,5 +21,13 @@ module.exports = function() {
   config.sassSrc = config.src +   '**/*.sass';
   config.sassDest = config.dest + 'css/';
 
+  // jade
+  config.jadeSrc = config.src +   '**/*.jade';
+  config.jadeDest = config.dest;
+
+  config.cssWatcherSrc = [config.sassSrc];
+  config.htmlWatcherSrc = [config.jadeSrc];
+  config.jsWatcherSrc = [config.jsSrc];
+
   return config;
 };

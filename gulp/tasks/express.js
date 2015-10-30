@@ -48,35 +48,20 @@ module.exports = function() {
   gulp.task('nodemon', function() {
 
     return gp.nodemon({ script: 'server/index.js', ext: 'html js css' })
-        .on('restart', function() {
-          console.log('server restarted');
-        })
-        .on('start', function() {
-          console.log('Starting Express on port: ' + proxyPort);
-          startBrowserSync();
-        })
-        .on('restart', function() {
-          console.log('Restarting Express on port: ' + proxyPort);
-          startBrowserSync();
-        })
-        .on('crash', function() {
-          console.log('Express server encountered a problem. Attempting to reload...');
-        });
+    .on('start', function() {
+      console.log('Starting Express on port: ' + proxyPort);
+      startBrowserSync();
+    })
+    .on('restart', function() {
+      console.log('Restarting Express on port: ' + proxyPort);
+      startBrowserSync();
+    })
+    .on('crash', function() {
+      console.log('Express server encountered a problem. Attempting to reload...');
+    });
   });
 
   gulp.task('express', ['browser-sync'], function() {
-
-    gulp.watch([src + '**/*.jade'], ['jade'], function() {
-      console.log('HTML file changed, rebuilding...');
-    });
-
-    gulp.watch([src + '**/*.sass'], ['sass'], function() {
-      console.log('Css file changed, rebuilding...');
-    });
-
-    gulp.watch([src + '**/*.js'], ['script', 'babel-es6'], function() {
-      console.log('JS file changed, rebuilding...');
-    });
-
+    // Run Express server
   });
 };
