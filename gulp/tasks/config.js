@@ -32,7 +32,7 @@ module.exports = function() {
 
   config.cssWatcherSrc = [config.sassSrc];
   config.htmlWatcherSrc = [config.jadeSrc];
-  config.jsWatcherSrc = [config.jsSrc];
+  config.jsWatcherSrc = [config.src + '**/*.js'];
 
   return config;
 };
