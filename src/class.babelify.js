@@ -1,3 +1,4 @@
+console.log('********** Class ************');
 ;(function() {
   class Animal {
     constructor() {
