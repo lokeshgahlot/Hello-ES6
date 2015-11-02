@@ -1,3 +1,4 @@
+console.log('********** Arrows ************');
 ;(function() {
   var evens = [2, 4, 6, 8];
 
